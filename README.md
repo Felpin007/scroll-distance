@@ -36,7 +36,9 @@ A interface mostra automaticamente a unidade mais adequada (cm, m ou km) e exibe
 
 ## Instalação
 
-1. Clone ou baixe este repositório
+> ℹ️ A extensão **ainda não está publicada** na Chrome Web Store (publicação exige uma taxa única de US$ 5 para a conta de desenvolvedor). Por enquanto, dá pra instalar direto a partir do código:
+
+1. Clone ou baixe este repositório (botão verde **Code** → **Download ZIP** → extraia)
 2. Acesse `chrome://extensions` no Chrome
 3. Ative o **Modo de desenvolvedor** (canto superior direito)
 4. Clique em **Carregar sem compactação** e selecione a pasta da extensão
