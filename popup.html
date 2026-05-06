@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>ScrollDistance</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="content-scroll">
+    <header>
+      <div class="logo-wrap">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect width="28" height="28" rx="8" fill="url(#grad)"/>
+          <path d="M9 14h10M9 10h6M9 18h8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M20 10l2 4-2 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="grad" x1="0" y1="0" x2="28" y2="28">
+              <stop offset="0%" stop-color="#6366f1"/>
+              <stop offset="100%" stop-color="#8b5cf6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h1>ScrollDistance</h1>
+      <button id="reset-btn" class="icon-btn" title="Zerar dados">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M2 8a6 6 0 1 0 1.5-3.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M2 4v4h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </header>
+
+    <div class="hero">
+      <div class="glow"></div>
+      <div class="hero-content">
+        <div class="distance-row">
+          <span id="distance-value">0</span>
+          <span id="distance-unit">cm</span>
+        </div>
+        <div id="comparison" class="comparison"></div>
+      </div>
+
+      <!-- Landmark visualization (transparent PNG over solid bg) -->
+      <div id="landmark-viz" class="landmark-viz" style="display:none">
+        <div class="landmark-row">
+          <div class="landmark-track">
+            <div class="landmark-fill" id="landmark-fill"></div>
+            <div class="landmark-marker" id="landmark-marker">
+              <span id="landmark-label" class="landmark-pct-badge">0%</span>
+            </div>
+          </div>
+          <img id="landmark-img" alt="" class="landmark-img" />
+          <span id="landmark-emoji" class="landmark-emoji" style="display:none"></span>
+        </div>
+        <p id="landmark-name" class="landmark-name"></p>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="stat-icon">📅</span>
+        <div>
+          <p class="stat-label">hoje</p>
+          <p id="daily-value" class="stat-value">0 cm</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">🌐</span>
+        <div>
+          <p class="stat-label">sites</p>
+          <p id="sites-count" class="stat-value">0</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <h2>Por site</h2>
+        <span id="sites-total-label" class="section-sub"></span>
+      </div>
+      <div id="sites-list" class="sites-list">
+        <p class="empty-state">Nenhum dado ainda.<br>Começa a scrollar! 👆</p>
+      </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
